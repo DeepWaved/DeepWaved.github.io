@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: https://deepwaved.github.io/sitemap.xml
