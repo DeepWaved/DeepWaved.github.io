@@ -1,0 +1,449 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Extracting Events and Their Relations from Texts A Survey on Recent - DW's blog - Something about I know</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="deep wave"><meta name=description content="Event-centric knowledge graph 挑战： 细粒度 多重关系 事件定义： event mention 完整的事件描述 event trigger 最具有事件发生代表性的词 event argument 关于事件的角色、实体 eg: A number of demonstrators threw stones and empty bottles at Israeli soldiers positioned near a Jewish"><meta name=keywords content="Blog,NLP,essay">
+<meta name=generator content="Hugo 0.88.1 with theme even">
+<link rel=canonical href=https://deepwaved.github.io/post/extracting-events-and-their-relations-from-texts-a-survey-on-recent/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content="Extracting Events and Their Relations from Texts  A Survey on Recent">
+<meta property="og:description" content="Event-centric knowledge graph 挑战： 细粒度 多重关系 事件定义： event mention 完整的事件描述 event trigger 最具有事件发生代表性的词 event argument 关于事件的角色、实体 eg: A number of demonstrators threw stones and empty bottles at Israeli soldiers positioned near a Jewish">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deepwaved.github.io/post/extracting-events-and-their-relations-from-texts-a-survey-on-recent/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-09-07T11:54:39+08:00">
+<meta property="article:modified_time" content="2021-09-07T11:54:39+08:00">
+<meta itemprop=name content="Extracting Events and Their Relations from Texts  A Survey on Recent">
+<meta itemprop=description content="Event-centric knowledge graph 挑战： 细粒度 多重关系 事件定义： event mention 完整的事件描述 event trigger 最具有事件发生代表性的词 event argument 关于事件的角色、实体 eg: A number of demonstrators threw stones and empty bottles at Israeli soldiers positioned near a Jewish"><meta itemprop=datePublished content="2021-09-07T11:54:39+08:00">
+<meta itemprop=dateModified content="2021-09-07T11:54:39+08:00">
+<meta itemprop=wordCount content="1474">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Extracting Events and Their Relations from Texts  A Survey on Recent">
+<meta name=twitter:description content="Event-centric knowledge graph 挑战： 细粒度 多重关系 事件定义： event mention 完整的事件描述 event trigger 最具有事件发生代表性的词 event argument 关于事件的角色、实体 eg: A number of demonstrators threw stones and empty bottles at Israeli soldiers positioned near a Jewish"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/ class=logo>DW</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/ class=logo>DW</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/categories/>Categories</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<header class=post-header>
+<h1 class=post-title>Extracting Events and Their Relations from Texts A Survey on Recent</h1>
+<div class=post-meta>
+<span class=post-time> 2021-09-07 </span>
+</div>
+</header>
+<div class=post-toc id=post-toc>
+<h2 class=post-toc-title>Contents</h2>
+<div class="post-toc-content always-active">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#event-centric-knowledge-graph>Event-centric knowledge graph</a>
+<ul>
+<li><a href=#dataset>Dataset</a></li>
+<li><a href=#研究现状>研究现状</a></li>
+<li><a href=#已有方法>已有方法</a></li>
+<li><a href=#实体级别信息>实体级别信息</a></li>
+<li><a href=#句法级信息>句法级信息</a></li>
+<li><a href=#文档级信息>文档级信息</a></li>
+<li><a href=#预训练语言模型>预训练语言模型</a></li>
+<li><a href=#文档级抽取的挑战>文档级抽取的挑战</a></li>
+</ul>
+</li>
+<li><a href=#关系抽取>关系抽取</a>
+<ul>
+<li><a href=#数据集>数据集</a></li>
+<li><a href=#ecr事件共指>ECR事件共指</a></li>
+<li><a href=#ece因果关系>ECE因果关系</a></li>
+<li><a href=#ete时间关系>ETE时间关系</a></li>
+<li><a href=#关系抽取总结>关系抽取总结</a></li>
+</ul>
+</li>
+<li><a href=#事理图谱>事理图谱</a></li>
+<li><a href=#总结>总结</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=post-content>
+<h2 id=event-centric-knowledge-graph>Event-centric knowledge graph</h2>
+<p>挑战：</p>
+<ul>
+<li>
+<p>细粒度</p>
+</li>
+<li>
+<p>多重关系</p>
+</li>
+</ul>
+<p>事件定义：</p>
+<p>event mention 完整的事件描述</p>
+<p>event trigger 最具有事件发生代表性的词</p>
+<p>event argument 关于事件的角色、实体</p>
+<p>eg:</p>
+<p>A number of demonstrators threw stones and empty bottles at Israeli soldiers positioned near a Jewish holy site at the town’s entrance.</p>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210707183022587.png alt=image-20210707183022587></p>
+<h3 id=dataset>Dataset</h3>
+<ul>
+<li>
+<p>ACE2005</p>
+<p>侧重于信息抽取</p>
+</li>
+<li>
+<p>TAC KBP</p>
+<p>侧重于知识库，一个事件可能归为多个事件类型</p>
+</li>
+</ul>
+<h3 id=研究现状>研究现状</h3>
+<ul>
+<li>如何获取语义表征</li>
+<li>如何在句子和文档级提取事件</li>
+<li>无标注少标注如何训练</li>
+</ul>
+<h3 id=已有方法>已有方法</h3>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210707195222766.png alt=image-20210707195222766></p>
+<ul>
+<li>
+<p>DMCNN Dynamic Multi-pooling Convolutional Neural Network</p>
+<p>📃 Event extraction via dynamic multipooling convolutional neural networks</p>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210707201148150.png alt=image-20210707201148150></p>
+</li>
+<li>
+<p>RNN</p>
+<ul>
+<li>
+<p>sentence embedding： word embedding、entity type embedding、the binary vector corresponding to the dependency relation between words in the parse tree</p>
+</li>
+<li>
+<p>RNN embedding:input到隐层，正反各一遍</p>
+</li>
+<li>
+<p>prediction : joint predict use binary memory vector and binary memory matrice</p>
+</li>
+</ul>
+<p>📃Joint event extraction via recurrent neural networks.</p>
+</li>
+</ul>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210707204241339.png alt=image-20210707204241339></p>
+<h3 id=实体级别信息>实体级别信息</h3>
+<ul>
+<li>
+<p>注意力机制</p>
+<ul>
+<li>Exploiting argument information to improve event detection via supervised attention mechanisms</li>
+</ul>
+</li>
+<li>
+<p>对抗训练</p>
+<ul>
+<li>
+<p>Exploiting the ground-truth: an adversarial imitation based knowledge distillation approach for event detection</p>
+<p>使用实体信息增强学习</p>
+</li>
+<li>
+<p>Event extraction with generative adversarial imitation learning</p>
+<p>反向模仿学习?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>多任务学习</p>
+<ul>
+<li>
+<p>Empower event detection with bi-directional neural language model. Knowl.</p>
+</li>
+<li>
+<p>Entity, relation, and event extraction with contextualized span representations</p>
+<p>联合网络 NER+EE+RE</p>
+</li>
+<li>
+<p>One for all: neural joint modeling of entities and events</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id=句法级信息>句法级信息</h3>
+<p>如何将句法结构编码进与实体相关的表征 ？RNN or GCN</p>
+<ul>
+<li>
+<p>GCN</p>
+<ul>
+<li>
+<p>Jointly multiple events extraction via attention-based graph information aggregation.</p>
+<p>句法信息做成弧放入基于注意力的GCN中</p>
+</li>
+<li>
+<p>Neural cross-lingual event detection with minimal parallel resources</p>
+<p>进一步扩展上面论文，可用来多语言迁移学习</p>
+</li>
+</ul>
+</li>
+<li>
+<p>BiLSTM</p>
+<ul>
+<li>Event detection with neural networks: a rigorous empirical evaluation</li>
+</ul>
+</li>
+</ul>
+<h3 id=文档级信息>文档级信息</h3>
+<p>当前做法多为将词向量与文档全局向量拼接</p>
+<ul>
+<li>
+<p>Exploiting document level information to improve event detection via recurrent neural networks.</p>
+<p>RNN</p>
+</li>
+<li>
+<p>分层结构</p>
+<ul>
+<li>
+<p>Collective event detection via a hierarchical and bias tagging networks with gated multi-level attention mechanisms</p>
+<p>无监督</p>
+</li>
+<li>
+<p>Document embedding enhanced event detection with hierarchical and supervised attention</p>
+</li>
+<li>
+<p>有监督</p>
+</li>
+</ul>
+</li>
+<li>
+<p>multi-hop mechanism of the memory network</p>
+<p>Exploiting contextual information via dynamic memory network for event detection</p>
+</li>
+<li>
+<p>probabilistic soft logic
+A probabilistic soft logic based approach to exploiting latent and global information in event classification</p>
+</li>
+</ul>
+<h3 id=预训练语言模型>预训练语言模型</h3>
+<ul>
+<li>
+<p>Exploring pre-trained language models for event extraction and generation SOTA</p>
+</li>
+<li>
+<p>Adversarial training for weakly supervised event detection</p>
+<p>PTM+对抗训练 弱监督</p>
+</li>
+<li>
+<p>HMEAE: hierarchical modular event argument extraction</p>
+<p>面向角色的抽取模型</p>
+</li>
+<li>
+<p>How does context matter? On the robustness of event detection with context-selective mask generalization</p>
+<p>使用BERT增益上下文信息</p>
+</li>
+<li>
+<p>Event extraction by answering (almost) natural questions，Event extraction as machine reading comprehension</p>
+<p>使用机器阅读理解辅助任务</p>
+</li>
+</ul>
+<h3 id=文档级抽取的挑战>文档级抽取的挑战</h3>
+<ul>
+<li>arguments-scattering 可能分布在多个句子中</li>
+<li>多事件 如实体可能存在多种不同事件，但共用事件</li>
+</ul>
+<p>两类方案</p>
+<ul>
+<li>
+<p>文档级事件角色填充抽取</p>
+<p>在MUC数据集评估 开放型抽取</p>
+<ul>
+<li>角色填充抽取</li>
+<li>角色填充共指消解</li>
+<li>事件追踪，对提到的参数分组</li>
+</ul>
+</li>
+<li>
+<p>预定义事件类型</p>
+<p>DCFEE: a document-level Chinese financial event extraction system based on automatically labeled training data.</p>
+<p>远程监督生成训练数据，参数补全时假设在周围句子中</p>
+<p>Doc2EDAG: an End-To-End Document-Level Framework for Chinese Financial Event Extraction</p>
+<p>将结构化信息转变为实体图，角色填充任务转化为路径扩展</p>
+<p>Reconstructing event regions for event extraction via graph attention networks.</p>
+<p>事件域概念</p>
+<p>文档级抽取当前多用GCN</p>
+</li>
+</ul>
+<p>###　数据增强</p>
+<p>+　远程监督</p>
+<ul>
+<li>
+<p>Automatically labeled data generation for large scale event extraction</p>
+</li>
+<li>
+<p>Scale up Event Extraction Learning via Automatic Training Data Generation
+先从Freebase提取key arguments，trigger words。在使用FrameNet填充，弱监督生产</p>
+</li>
+<li>
+<p>Adversarial training for weakly supervised event detection</p>
+<p>假设触发词在某一数据集中表达的是同一类型事件</p>
+</li>
+<li>
+<p>跨语言数据增强</p>
+<p>分成两个模块 翻译模块、语料模块</p>
+</li>
+<li>
+<p>添加外部知识</p>
+<ul>
+<li>Leveraging framenet to improve automatic event detection</li>
+<li>Liberal event extraction and event schema induction.</li>
+</ul>
+</li>
+</ul>
+<h2 id=关系抽取>关系抽取</h2>
+<p>事件共指、因果关系、时间关系</p>
+<h3 id=数据集>数据集</h3>
+<ul>
+<li>MUC</li>
+<li>ACE2005</li>
+<li>ontoNotes 大规模语料</li>
+<li>EventCorefBank</li>
+<li>TAC KBP</li>
+</ul>
+<h3 id=ecr事件共指>ECR事件共指</h3>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210714155606943.png alt=image-20210714155606943></p>
+<p>当前方法通常将问题转化为分类问题或者排序问题,也有方法关联其他任务如事件抽取来做联合任务。</p>
+<p>ILP CRF MLN(Markov Logic networks)</p>
+<h3 id=ece因果关系>ECE因果关系</h3>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210714155857664.png alt=image-20210714155857664></p>
+<p>当前方法视问题为分类问题，方法分为考虑文本内部信息与考虑外部关联知识两种方案。</p>
+<p>外部知识</p>
+<p>Knowledge enhanced event causality identification with mention masking generalizations.</p>
+<h3 id=ete时间关系>ETE时间关系</h3>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210714163310633.png alt=image-20210714163310633></p>
+<p>同样作为分类问题，基于规则，基于传统机器学习，神经网络三类方案</p>
+<p>神经网络CNN LSTM BiLSTM</p>
+<h3 id=关系抽取总结>关系抽取总结</h3>
+<p>事件共指多发生在文档级及跨文档级，因果和时间关系在句子和文档级都有</p>
+<p><img src=https://gitee.com/deepwave/pic_bed/raw/master/img/image-20210714165019648.png alt=image-20210714165019648></p>
+<h2 id=事理图谱>事理图谱</h2>
+<ul>
+<li>EventKG A Multilingual Event-Centric Temporal Knowledge Grap</li>
+<li>ELG:Neural temporal relation extraction</li>
+<li>ASER: a large-scale eventuality knowledge graph.</li>
+<li>Event2Mind: commonsense inference on events, intents, and reactions.</li>
+<li>GLUCOSE. GeneraLized and COntextualized Story Explanations 给定故事和短句x，捕获和短句x有关的纬度</li>
+<li>ATOMIC: an Atlas of Machine Commonsense for If-Then Reasoning 探究if-then结构(1) “causes”, (2) “effects”, and (3) “stative”.</li>
+</ul>
+<h2 id=总结>总结</h2>
+<ul>
+<li>问题一: 事件如何表示？现有的单触发词不能很好的表示一个事件</li>
+<li>问题二：文档级事件抽取还需更深入研究</li>
+<li>问题三：如何从多样的模型中抽取事件</li>
+<li>问题四：开放域的事件抽取</li>
+</ul>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span class=item-title>Author</span>
+<span class=item-content>deep wave</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>LastMod</span>
+<span class=item-content>
+2021-09-07
+</span>
+</p>
+</div>
+<footer class=post-footer>
+<nav class=post-nav>
+</nav>
+</footer>
+</article>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=mailto:deepwave98@gmail.com class="iconfont icon-email" title=email></a>
+<a href=https://github.com/DeepWaved class="iconfont icon-github" title=github></a>
+<a href=https://space.bilibili.com/35531807 class="iconfont icon-bilibili" title=bilibili></a>
+<a href=https://deepwaved.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
+<span class=division>|</span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<span class=copyright-year>
+&copy;
+2020 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>deep wave</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>
