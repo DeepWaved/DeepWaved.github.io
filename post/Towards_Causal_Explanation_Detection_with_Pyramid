@@ -1,0 +1,45 @@
+---
+title: "Towards Causal Explanation Detection with Pyramid"
+date: 2021-09-07T12:12:34+08:00
+draft: false
+---
+
+## Problem
+
+Causal Explanation Detection 因果解释检测（确定一条消息中是否存在因果解释）
+
+目前方法 feature-based methods and neural-based methods
+
+**隐式特征提取困难**
+
+## 方法
+
+PSAN
+
+key discourses 定义：root word and its surrounding words
+
+两层网络：
+
++ 底层使用graph-based word-level salient network 提取词之间关系，找到key
++ 顶层使用attention-based discourse-level salient network
+
+![Quicker_20210630_172208](https://gitee.com/deepwave/pic_bed/raw/master/img/2021-09-07 12-13-52_Quicker_20210630_172208.png)
+
+Input 层
+
+信息分解为d个语料 送入multi-head attention
+
+Bottom层
+
++ coreNLP提取句法中心图
++ 使用包含root word的最后一层建图GCN
+
+Top层
+
++ 使用average pooling表示总体语义
++ 注意力机制
+
+## 不足
+
++ 因果关系容易被情感误导
++ 因果关系容易过度解读
